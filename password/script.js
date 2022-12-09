@@ -24,9 +24,9 @@ var passwordText = document.querySelector("#password");
   if (correctPrompts) {
     var newPassword = generatePassword();
     passwordText.value = newPassword ;
-  }
+  } else {
   passwordText.value = "No Good";
-  
+  }
 }
 
 // I would generatePassword based on the prompts
@@ -45,13 +45,13 @@ function getPrompts(){
 
   choiceArr = [];
 
-  characterLength = parseInt(prompt("How many characters do you want your password to be? (8-128 charactwers"));
+  characterLength = parseInt(prompt("How many characters do you want your password to be? 8 - 128 characters."));
 
   // isNaN lets use characters that are not numbers as numbers
   if(isNaN(characterLength)|| characterLength < 8 || characterLength > 128){
 
     // if they chose lower than 8 or more than 128 this messege below will appear
-    alert("Character length has to a number, 8 -128 digits. Please try again.");
+    alert("Character length has to a number, 8 - 128 digits. Please try again.");
     return false;
   }
   if (confirm("Would you like lowercase letters in your password?")) {
